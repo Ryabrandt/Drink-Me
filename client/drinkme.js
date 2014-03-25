@@ -10,6 +10,12 @@ if (Meteor.isClient) {
         Meteor.call("getCocktails");
     }
   });
+
+  Template.profilePage.username = function(){
+    if(Boolean(Meteor.user())){
+      return Meteor.user();
+    }
+  };
 }
 
 if (Meteor.isServer) {
