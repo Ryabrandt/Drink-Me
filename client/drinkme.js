@@ -22,6 +22,15 @@ if (Meteor.isClient) {
       Router.go("newDrink");
     }
   });
+
+  Template.drinks.allDrinks = function(){
+    try{
+      console.log("in the allDrinks");
+      return Cocktails.find();      
+    }catch(error){
+      console.log(error);
+    }
+  };
 }
 
 

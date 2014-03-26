@@ -22,4 +22,9 @@ Router.map(function () {
     path: '/newdrink',
     template: 'newDrink'
   });
+
+  this.route('showDrinks', {
+    path: '/cocktails',
+    template: 'drinks'
+  });
 });
