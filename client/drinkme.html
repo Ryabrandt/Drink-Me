@@ -9,19 +9,7 @@
 </body>
 
 <template name="layout">
-  <div class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Drink me</a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{ loginButtons }} <!-- here -->
-      </ul>
-    </div>
-  </div>
+  {{>navbar}}
   {{yield}}
 </template>
 
@@ -32,5 +20,10 @@
 </template>
 
 <template name="profilePage">
-  <h1>Welcome back test!!</h1>
+  <h1>Welcome back {{username}}!!</h1>
+  <input type="button" value="New Drink"/>
+</template>
+
+<template name="newDrink">
+  {{>insertNewDrink}}
 </template>

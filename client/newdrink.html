@@ -1,0 +1,32 @@
+<template name="insertNewDrink">
+  <form id="newDrinkForm" role="form">
+    <div class="form-group">
+      <input type="text" name="" class="form-control drinkName" placeholder="Name"></input>
+      <input type="text" name="" class="form-control glass" placeholder="Glass Type"></input>
+    </div>
+    <div class="form-group cocktailIngredient">
+      <input type="text" name="ingredientName" class="form-inline form-control" placeholder="ingredient"></input>
+      <input type="text" name="ingredientQty" class="form-inline form-control" placeholder="quantity"></input>
+    </div>
+    
+    <div class="form-group nodeAfterIngredients">
+      <button class="newIngredientButton btn btn-default">Add another Ingredient</button><br><br>
+      <textarea class="form-control mixingDirections" name='' placeholder="Directions for making this drink"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Add Drink!</button>
+  </form>
+</template>
+
+
+<!-- {"name": "Manhattan", 
+"glass": "Nick and Nora", 
+"directions": "Mix ingredients, stir, strain, garnish with maraschino.", 
+"ingredients": [  
+      {"type": "Rye",
+       "quantity": "1.5oz"},   
+      {"type": "Vermouth",
+       "quantity": ".5oz"},  
+      {"type": "Angostura Bitters",
+       "quantity": "2 dashes"}]
+}
+ -->

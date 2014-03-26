@@ -17,4 +17,9 @@ Router.map(function () {
     path: '/profile',
     template: 'profilePage'
   });
+
+  this.route('newDrink', {
+    path: '/newdrink',
+    template: 'newDrink'
+  });
 });
