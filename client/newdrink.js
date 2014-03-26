@@ -26,9 +26,6 @@ Template.insertNewDrink.events({
         ingredients: ingArray
       });
       console.log(ingArray);
-
-      
-      $("#newDrinkForm")[0].reset();
     } catch(err){
       console.log(err);
     }
