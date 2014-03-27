@@ -1,1 +1,6 @@
 Features to add/Bugs to fix:
+
+- When +add ingredient - move cursor to new 1st field
+- Don’t keep null ingredient spaces
+- nav should change “darker” space with what page it’s on
+- 
