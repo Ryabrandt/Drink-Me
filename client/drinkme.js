@@ -31,6 +31,10 @@ if (Meteor.isClient) {
       $(".cabinet").toggleClass("byeBye");
     }
   });
+
+  Template.cabinet.fullCabinet = function() {
+    return Meteor.subscribe("cabinetData");
+  };
 }
 
 

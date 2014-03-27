@@ -1,5 +1,3 @@
-Meteor.subscribe('cabinetData');
-
 Template.addToCabinet.form_changed = function(){
   return Session.get('form_changed');
 };
@@ -8,15 +6,11 @@ Template.addToCabinet.events({
     e.preventDefault();
     console.log("Ingredient Added!");
     try{
-      Cabinets.update(
-          {owner: Meteor.userId()},
-          {$push: 
-            {cabinet: {
-              name: $(".cabinetIngredient").val(),
-              quantity: $(".ingredientQuant").val()
-            }}
-          }
-      );
+      Meteor.call('addToLiquorCabinet', {
+        cabinetOwner: Meteor.userId(),
+        ingredientName: $(".cabinetIngredient").val(),
+        ingredientQuant: $(".ingredientQuant").val()
+      });
     Session.set('form_changed', window.Date());
     $("#addToCabinetForm")[0].reset();      
     }catch(error){
