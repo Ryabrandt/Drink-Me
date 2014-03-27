@@ -1,13 +1,15 @@
-<template name="drinks">
+<template name="cocktails">
   {{#each allDrinks}}
   <div>
-    {{name}}
-    {{glass}}
-    {{#each ingredients}}
-  <p>{{name}}{{quantity}}</p>
-    {{/each}}
-  <p>{{directions}}</p>
-  </div>
-  {{/each}}
-  
+    <h3> {{name}}</h3>
+      <p>Glass: {{glass}} </p>
+      <p>Ingredients:</p>
+    <ul>
+      {{#each ingredients}}
+        <li>{{name}} - {{quantity}}</li>
+      {{/each}}
+    </ul>
+    <p class="drinkDirections">Directions: {{directions}}</p>
+  </div><br><br>
+  {{/each}}  
 </template>
