@@ -11,19 +11,13 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.profilePage.username = function(){
-    if(Boolean(Meteor.user())){
-      return Meteor.user().emails[0].address;
-    }
-  };
-
   Template.profilePage.events({
-    'click input': function() {
-      Router.go("newDrink");
+    'click .newDrinkButton': function() {
+      Router.go("insertNewDrink");
     }
   });
 
-  Template.drinks.allDrinks = function(){
+  Template.cocktails.allDrinks = function(){
     try{
       console.log("in the allDrinks");
       return Cocktails.find();      
@@ -31,6 +25,12 @@ if (Meteor.isClient) {
       console.log(error);
     }
   };
+
+  Template.cabinet.events({
+    'click .addToCabinetButton': function() {
+      $(".cabinet").toggleClass("byeBye");
+    }
+  });
 }
 
 

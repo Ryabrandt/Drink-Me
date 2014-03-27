@@ -1,4 +1,9 @@
+
+Template.insertNewDrink.form_changed = function(){
+  return Session.get('form_changed');
+};
 Template.insertNewDrink.events({
+  
   'submit #newDrinkForm': function(e){
     console.log("Submitted");
     e.preventDefault();
@@ -17,14 +22,15 @@ Template.insertNewDrink.events({
         tempObj.name = ingredients[i];
         tempObj.quantity = ingredients[i+1];
         ingArray.push(tempObj);
-      }
-      
+      }      
       Cocktails.insert({
         name: $(".drinkName").val(),
         glass: $(".glass").val(),
         directions: $(".mixingDirections").val(),
         ingredients: ingArray
       });
+      Session.set('form_changed', window.Date());
+      $("#newDrinkForm")[0].reset();
       console.log(ingArray);
     } catch(err){
       console.log(err);

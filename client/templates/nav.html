@@ -5,8 +5,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/cocktails">Cocktails</a></li>
+        <li class="active"><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'cocktails'}}">Cocktails</a></li>
+        <li><a href="{{pathFor 'cabinet'}}">My Cabinet</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{ loginButtons }} <!-- here -->

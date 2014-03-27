@@ -3,9 +3,6 @@
 </head>
 
 <body>
-  
-  
-
 </body>
 
 <template name="layout">
@@ -20,6 +17,6 @@
 </template>
 
 <template name="profilePage">
-  <h1>Welcome back {{username}}!!</h1>
-  <input type="button" value="New Drink"/>
+  <h1>Welcome back {{currentUser.emails.[0].address}}!!</h1>
+  <button class="btn btn-default newDrinkButton">New Drink</button>
 </template>

@@ -1,0 +1,12 @@
+<template name="cocktails">
+  {{#each allDrinks}}
+  <div>
+    {{name}}
+    {{glass}}
+    {{#each ingredients}}
+  <p>{{name}}{{quantity}}</p>
+    {{/each}}
+  <p>{{directions}}</p>
+  </div>
+  {{/each}}
+</template>
