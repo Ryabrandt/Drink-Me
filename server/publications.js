@@ -3,7 +3,7 @@ Meteor.publish("cabinetData", function(){
 });
 
 Meteor.publish("allCocktails", function(){
-  return Cocktails.find();
+  return Cocktails.find({ $query: {}, $orderby: { name: 1 }});
 });
 
 Meteor.publish("userData", function () {

@@ -5,7 +5,6 @@ Template.insertNewDrink.form_changed = function(){
 Template.insertNewDrink.events({
   
   'submit #newDrinkForm': function(e){
-    console.log("Submitted");
     e.preventDefault();
     try{
       var ingredients = [];
@@ -31,7 +30,6 @@ Template.insertNewDrink.events({
       });             
       Session.set('form_changed', window.Date());
       $("#newDrinkForm")[0].reset();
-      console.log(ingArray);
     } catch(err){
       console.log(err);
     }
@@ -40,6 +38,5 @@ Template.insertNewDrink.events({
     e.preventDefault();
     var addDiv = "<div class='form-group cocktailIngredient'><input type='text' class='form-inline form-control ingredientName' placeholder='ingredient'></input><input type='text' class='form-inline form-control ingredientQty' placeholder='quantity'></input></div>";
     $(".nodeAfterIngredients").prev().append(addDiv);
-    console.log("Adding new Ingredient");
   }
 });
