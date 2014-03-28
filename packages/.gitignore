@@ -1,8 +1,5 @@
+/iron-router
+/moment
 /bootstrap-3
 /accounts-ui-bootstrap-3
-/cheerio
-/iron-router
-/autoform
-/simple-schema
-/moment
-/collection2
+/twitter-api

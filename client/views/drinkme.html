@@ -1,5 +1,6 @@
 <head>
   <title>Drink Me</title>
+  <link rel='shortcut icon' type='image/png' href='/favicon.ico' />
 </head>
 
 <body>
@@ -7,16 +8,38 @@
 
 <template name="layout">
   {{>navbar}}
-  {{yield}}
+  <div class="container-fluid">
+    <div class="row">
+
+      {{yield}}
+    </div>
+  </div>
 </template>
 
 <template name="hello">
-  <h1>Hello World!</h1>
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4 text-center">
+  <img src="/logobig.png"><br>
   {{greeting}}
-  <input type="button" value="Click" />
+  </div>
+  <div class="col-lg-4">
+  </div>
 </template>
 
 <template name="profilePage">
-  <h1>Welcome back {{currentUser.emails.[0].address}}!!</h1>
-  <button class="btn btn-default newDrinkButton">New Drink</button>
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4 text-center">
+    {{#if currentUser.services}}
+    <h1>Welcome back {{currentUser.profile.name}}!!</h1>
+    {{/if}}
+    {{#if currentUser.emails}}
+    <h1>Welcome back {{currentUser.emails.[0].address}}!!</h1>
+    {{/if}}
+
+    <button class="btn btn-default newDrinkButton">New Drink</button>
+  </div>
+  <div class="col-lg-4">
+  </div>
 </template>

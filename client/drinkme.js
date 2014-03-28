@@ -3,23 +3,26 @@ if (Meteor.isClient) {
     return "Welcome to drinkme.";
   };
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("Sam is the best wife");
-    }
-  });
-
   Template.profilePage.events({
     'click .newDrinkButton': function() {
       Router.go("insertNewDrink");
     }
   });
+  Template.cocktails.events({
+    'click .tweetButton': function() {
+      console.log("CLICKED SOMETHING");
+      Meteor.call("cocktailTweet", "This is Twweeeeeetttt!", function(err,result) {
+        if(!err) {
+          alert("Tweet posted");
+        } else {
+          console.log(err);
+        }
+      });
+    }
+  });
 
   Template.cocktails.allDrinks = function(){
     try{
-      console.log("in the allDrinks");
       return Cocktails.find();      
     }catch(error){
       console.log(error);
@@ -33,13 +36,24 @@ if (Meteor.isClient) {
   });
 
   Template.cabinet.fullCabinet = function() {
-    return Meteor.subscribe("cabinetData");
-  };
+      try{
+        console.log("Trying to show full cabinet");
+        return Cabinets.find();
+      }catch(error){
+        console.log(error);
+      }
+    };
 }
 
-
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+  var twitter = new TwitterApi();
+
+  Meteor.methods({
+    cocktailTweet: function(text){
+      if(Meteor.user()){
+        console.log("Trying to post");
+        twitter.postTweet(text);
+      }
+    }
   });
 }
