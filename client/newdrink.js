@@ -23,12 +23,12 @@ Template.insertNewDrink.events({
         tempObj.quantity = ingredients[i+1];
         ingArray.push(tempObj);
       }      
-      Cocktails.insert({
-        name: $(".drinkName").val(),
-        glass: $(".glass").val(),
-        directions: $(".mixingDirections").val(),
-        ingredients: ingArray
-      });
+      Meteor.call("newCocktail", {
+        cocktailName: $(".drinkName").val(),
+        cocktailGlass: $(".glass").val(),
+        cocktailDirections: $(".mixingDirections").val(),
+        cocktailIngredients: ingArray
+      });             
       Session.set('form_changed', window.Date());
       $("#newDrinkForm")[0].reset();
       console.log(ingArray);

@@ -37,7 +37,6 @@ if (Meteor.isClient) {
 
   Template.cabinet.fullCabinet = function() {
       try{
-        console.log("Trying to show full cabinet");
         return Cabinets.find();
       }catch(error){
         console.log(error);
