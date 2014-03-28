@@ -3,6 +3,8 @@ if (Meteor.isClient) {
     return "Welcome to drinkme.";
   };
 
+  // Needs to be reworked and hooked up to oAuth, adhering to the specs
+  // from the latest version of meteor.
   Template.cocktails.events({
     'click .tweetButton': function() {
       console.log("CLICKED SOMETHING");
@@ -16,6 +18,8 @@ if (Meteor.isClient) {
     }
   });
 
+  // Returns a find based on what data was subscribed, NOT necessarily the entire set
+  // although in this case it should be.
   Template.cocktails.allDrinks = function(){
     try{
       return Cocktails.find();      
@@ -26,13 +30,15 @@ if (Meteor.isClient) {
 
   Template.cabinet.events({
     'click .addToCabinetButton': function() {
-      $(".cabinet").toggleClass("byeBye");
+      $(".cabinet").toggleClass("byeBye"); //toggles the hidden form to add a new ingredient
     },
     'click .newDrinkButton': function() {
-      Router.go("insertNewDrink");
+      Router.go("insertNewDrink"); // renders the insertnewDrink template
     }
   });
 
+  // Unlike above, returns only the cabinet that is associated with currentUser
+  // based on the publish function
   Template.cabinet.fullCabinet = function() {
       try{
         return Cabinets.find();
@@ -43,6 +49,9 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+
+  // May need to be manually replaced and have ENV variables added for 
+  // posting with oAuth.
   var twitter = new TwitterApi();
 
   Meteor.methods({

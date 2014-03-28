@@ -1,4 +1,6 @@
 Meteor.methods({
+  // Upsert attempts to update based on the qury parameter, in this case, owner,
+  // and if no cabinet by that owner exists, will create on instead.
   addToLiquorCabinet: function(data){
     try{
       Cabinets.update(
@@ -15,6 +17,8 @@ Meteor.methods({
       console.log(error);
     }
   },
+  // Creates a new cocktail where ingredients is an array of objects, while the
+  // others are standard objects with one key each.
   newCocktail: function(info){
     try{
       Cocktails.insert({

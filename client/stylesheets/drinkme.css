@@ -6,6 +6,7 @@ body{
   background-color: #FAFFFF;
   margin-bottom: 60px;
 }
+/* For the hidden form toggle */
 .byeBye{
   display: none;
 }
@@ -17,6 +18,8 @@ body{
 .drinkImg{
   margin-top: 50px;
 }
+
+/* Sets the tile for each Cocktail*/
 .makeCocktailPretty {
   padding-top: 2%;
   padding-left: 6%;

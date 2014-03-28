@@ -3,11 +3,12 @@
   </div>
   <div class="col-md-6 col-lg-6">
     <h2>Add a new Drink to the Library</h2>
+    <!-- hidden div sets a session variable that gets refreshed on submit to clear out the form -->
     <div style="visibility:hidden;">{{form_changed}}</div>
     <form id="newDrinkForm" role="form">
       <div class="form-group">
-        <input type="text" name="" class="form-control drinkName" placeholder="Name"></input>
-        <input type="text" name="" class="form-control glass" placeholder="Glass Type"></input>
+        <input type="text" class="form-control drinkName" placeholder="Name"></input>
+        <input type="text" class="form-control glass" placeholder="Glass Type"></input>
       </div>
       <div class="form-group cocktailIngredient">
         <input type="text" name="ingredientName" class="form-inline form-control" placeholder="ingredient"></input>
@@ -16,7 +17,7 @@
       
       <div class="form-group nodeAfterIngredients">
         <button class="newIngredientButton btn btn-default">Add another Ingredient</button><br><br>
-        <textarea class="form-control mixingDirections" name='' placeholder="Directions for making this drink"></textarea>
+        <textarea class="form-control mixingDirections" placeholder="Directions for making this drink"></textarea>
       </div>
       <button type="submit" class="btn btn-default">Add Drink!</button>
     </form>
@@ -27,14 +28,14 @@
 
 
 <!-- {"name": "Manhattan", 
-"glass": "Nick and Nora", 
-"directions": "Mix ingredients, stir, strain, garnish with maraschino.", 
-"ingredients": [  
-      {"type": "Rye",
-       "quantity": "1.5oz"},   
-      {"type": "Vermouth",
-       "quantity": ".5oz"},  
-      {"type": "Angostura Bitters",
-       "quantity": "2 dashes"}]
-}
+      "glass": "Nick and Nora", 
+      "directions": "Mix ingredients, stir, strain, garnish with maraschino.", 
+      "ingredients": [  
+        {"type": "Rye",
+         "quantity": "1.5oz"},   
+        {"type": "Vermouth",
+         "quantity": ".5oz"},  
+        {"type": "Angostura Bitters",
+         "quantity": "2 dashes"}]
+      }
  -->

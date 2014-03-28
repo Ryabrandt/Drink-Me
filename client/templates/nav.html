@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="{{pathFor 'cocktails'}}">Cocktails</a></li>
-          {{#if currentUser}}
+          {{#if currentUser}} <!-- Anonymous users can see the list but cannot add a cabinet -->
           <li><a href="{{pathFor 'cabinet'}}">My Cabinet</a></li>
           {{/if}}
         </ul>

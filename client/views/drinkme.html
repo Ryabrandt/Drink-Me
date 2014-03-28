@@ -1,6 +1,5 @@
 <head>
   <title>Drink Me</title>
-  <link rel='shortcut icon' type='image/png' href='/favicon.ico' />
 </head>
 
 <body>
@@ -17,20 +16,22 @@
 </template>
 
 <template name="hello">
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
-  <div class="col-lg-4 text-center">
+  <div class="col-md-4 col-lg-4 text-center">
     <a href="{{pathFor 'cocktails'}}"><img class='drinkImg' src="/logobig.png"/></a><br>
     <h4>{{greeting}}</h4>
   </div>
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
 </template>
 
 <template name="profilePage">
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
-  <div class="col-lg-4 text-center">
+  <div class="col-md-4 col-lg-4 text-center">
+    <!-- Addresses the user based on their sign up e-mail
+         or their real name supplied by Twitter log in. -->
     {{#if currentUser.services.twitter}}
     <h1>Welcome back {{currentUser.profile.name}}!!</h1>
     {{/if}}
@@ -38,6 +39,6 @@
     <h1>Welcome back {{currentUser.emails.[0].address}}!!</h1>
     {{/if}}
   </div>
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
 </template>
