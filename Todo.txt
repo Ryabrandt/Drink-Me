@@ -3,4 +3,5 @@ Features to add/Bugs to fix:
 - When +add ingredient - move cursor to new 1st field
 - Don’t keep null ingredient spaces
 - nav should change “darker” space with what page it’s on
-- 
+- The logo on the front page, when clicked, should take you either to your page or to the cocktails page
+- the drinks page should have the "new drinks" link to the left of the list
