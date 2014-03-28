@@ -1,22 +1,22 @@
 <template name="cocktails">
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
     {{#each allDrinks}}
     <div class="makeCocktailPretty">
-      <h3> {{name}}</h3>
-        <p>Glass: {{glass}} </p>
-        <p>Ingredients:</p>
+      <img src="bird_blue_32.png" class="tweetButton"/>
+      <h3> {{name}}</h3> 
+        <p><strong>Glass:</strong> {{glass}} </p>
+        <p><strong>Ingredients:</strong></p>
       <ul>
         {{#each ingredients}}
           <li>{{name}} - {{quantity}}</li>
         {{/each}}
       </ul>
-      <p class="drinkDirections">Directions: {{directions}}</p>
-      <button class="btn btn-default tweetButton">Tweet this Drink</button>
+      <p><strong>Directions:</strong> {{directions}}</p>
     </div><br><br>
     {{/each}}  
   </div>
-  <div class="col-lg-4">
+  <div class="col-md-4 col-lg-4">
   </div>
 </template>

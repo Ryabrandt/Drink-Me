@@ -3,11 +3,6 @@ if (Meteor.isClient) {
     return "Welcome to drinkme.";
   };
 
-  Template.profilePage.events({
-    'click .newDrinkButton': function() {
-      Router.go("insertNewDrink");
-    }
-  });
   Template.cocktails.events({
     'click .tweetButton': function() {
       console.log("CLICKED SOMETHING");
@@ -32,6 +27,9 @@ if (Meteor.isClient) {
   Template.cabinet.events({
     'click .addToCabinetButton': function() {
       $(".cabinet").toggleClass("byeBye");
+    },
+    'click .newDrinkButton': function() {
+      Router.go("insertNewDrink");
     }
   });
 

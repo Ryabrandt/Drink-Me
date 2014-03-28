@@ -3,23 +3,39 @@ html {
   min-height: 100%;
 }
 body{
-  /*background-color: #A1332e;*/
+  background-color: #FAFFFF;
   margin-bottom: 60px;
 }
 .byeBye{
   display: none;
 }
-.drinkDirections {
-  font-style: italic;
-  font-weight: bold;
+
+.tweetButton {
+  float: right;
+  margin-right: 8px;
 }
 .drinkImg{
   margin-top: 50px;
 }
 .makeCocktailPretty {
+  padding-top: 2%;
+  padding-left: 6%;
   width:500px;
   height:500px;
-  box-shadow: 5px 5px 15px #888888;
+  box-shadow: 5px 5px 10px #888888;
+  border:1px #888888;
+  border-radius:5px;
+  background-color: white;
+}
+.cabinetItem{
+  font-size: 16px;
+}
+.cabinetPretty{
+  padding-top: 2%;
+  padding-left: 6%;
+  width:500px;
+  height:500px;
+  box-shadow: 5px 5px 10px #888888;
   border:1px #888888;
   border-radius:5px;
   background-color: white;
