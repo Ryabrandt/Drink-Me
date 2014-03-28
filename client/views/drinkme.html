@@ -10,17 +10,17 @@
   {{>navbar}}
   <div class="container-fluid">
     <div class="row">
-
       {{yield}}
     </div>
   </div>
+  {{>footsie}}
 </template>
 
 <template name="hello">
   <div class="col-lg-4">
   </div>
   <div class="col-lg-4 text-center">
-    <img src="/logobig.png"><br>
+    <a href="{{pathFor 'cocktails'}}"><img class='drinkImg' src="/logobig.png"/></a><br>
     <h4>{{greeting}}</h4>
   </div>
   <div class="col-lg-4">
