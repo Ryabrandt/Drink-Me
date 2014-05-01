@@ -4,13 +4,12 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-preserve-inputs
 underscore
 jquery
 http
-iron-router
 bootstrap-3
 accounts-ui-bootstrap-3
 accounts-password
 accounts-twitter
 twitter-api
+iron-router
